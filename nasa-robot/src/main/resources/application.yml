@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  contextPath: /rest
+  
+robot:
+  initial_coordinate_x: 0
+  initial_coordinate_y: 0
+  initial_direction: NORTH
+  
+ground:
+  min_coordinate_y: 0
+  min_coordinate_x: 0
+  max_coordinate_y: 5
+  max_coordinate_x: 5
+
+spring:
+  messages:
+    basename: i18n/messages
+    cache-seconds: -1
+    encoding: ISO-8859-1
