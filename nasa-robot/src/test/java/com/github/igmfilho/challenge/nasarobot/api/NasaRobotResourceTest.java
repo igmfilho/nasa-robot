@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.github.igmfilho.challenge.nasarobot.NasaRobotSpringBootApp;
+import com.github.igmfilho.challenge.nasarobot.checker.BorderLimitChecker;
 import com.github.igmfilho.challenge.nasarobot.service.RobotService;
 
 @RunWith(SpringRunner.class)
@@ -42,6 +43,7 @@ public class NasaRobotResourceTest {
 
 	@Test
     public void shouldMoveTo20SouthDirection() throws Exception{
+		robotService.setBorderLimit(new BorderLimitChecker());
         mockMvc.perform(post("/nasa-robot/moveto/MMRMMRMM"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("(2, 0, S)"));
